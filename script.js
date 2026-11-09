@@ -35,13 +35,6 @@ const projects = [
     link: null
   },
   {
-    title: "DZcouture",
-    image: "images/dzcouture.jpg",
-    description: "Site dédié à la couture : mise en valeur des créations, du savoir-faire et des modèles proposés.",
-    tags: ["Site web", "E-vitrine"],
-    link: "https://tchinkou.github.io/DZcouture/#/"
-  },
-  {
     title: "SaldaeConnect",
     image: "images/saldaeconnect.jpg",
     description: "Plateforme de mise en relation autour de la région de Béjaïa (Saldae), pour connecter habitants, services et acteurs locaux.",
