@@ -64,9 +64,6 @@ const projects = [
   }
 ];
 
-// Aperçu automatique d'un site en ligne (utilisé si la photo locale est absente)
-const preview = url => `https://image.thum.io/get/width/800/crop/500/noanimate/${url}`;
-
 const grid = document.getElementById("projects");
 
 projects.forEach((p, i) => {
@@ -89,16 +86,10 @@ projects.forEach((p, i) => {
     </div>
   `;
 
-  // Ordre : photo locale (images/...) → aperçu du site en ligne → fond dégradé
+  // Image du projet (dossier images/) ; fond dégradé si elle est absente
   const img = card.querySelector("img");
-  const sources = [p.image, p.link && preview(p.link)].filter(Boolean);
-  let n = 0;
-  img.onerror = () => {
-    n++;
-    if (n < sources.length) img.src = sources[n];
-    else card.querySelector(".card-media").classList.add("no-image");
-  };
-  img.src = sources[0];
+  img.onerror = () => card.querySelector(".card-media").classList.add("no-image");
+  img.src = p.image;
 
   grid.appendChild(card);
 });
